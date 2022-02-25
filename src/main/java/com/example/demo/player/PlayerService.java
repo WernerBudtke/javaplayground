@@ -21,12 +21,14 @@ public class PlayerService {
         return playerRepository.findAll();
     }
 
-    public void addNewPlayer(Player player) {
+    public boolean addNewPlayer(Player player) {
         Optional<Player> playerOptional = playerRepository.findPlayerByUsername(player.getUsername());
         if (playerOptional.isPresent()){
-            throw new IllegalStateException("Username already exist");
+            //throw new IllegalStateException("Username already exist");
+            return false;
         }
         playerRepository.save(player);
+        return true;
     }
 
     public void deletePlayer(Long playerId) {

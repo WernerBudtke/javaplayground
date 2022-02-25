@@ -39,8 +39,22 @@ public class Player {
         this.roll = roll;
     }
 
-    public Player() {
+    public Player(String username, String password){
+        this.username = username;
+        this.password = password;
+        this.highscore = 0;
+        this.tries = 0;
+        this.wins = 0;
+        this.score = 0;
+        this.roll = 5000;
+    }
 
+    public Player(){
+        this.highscore = 0;
+        this.tries = 0;
+        this.wins = 0;
+        this.score = 0;
+        this.roll = 5000;
     }
 
     public String getUsername() {

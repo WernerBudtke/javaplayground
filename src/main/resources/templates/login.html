@@ -1,0 +1,19 @@
+<th:block th:include="partials/head.html"></th:block>
+<body id="bodyLogin">
+    <th:block th:include="partials/header.html"></th:block>
+    <main>
+        <form action="/login" method="POST">
+            <p th:if="${userCreated}" class="textGreen" id="accCreatedSuccess">Account created successfully, please log in!</p>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">LOG IN</button>
+            <a href="/register">Don't have an account? Register!</a>
+            <p th:if="${error}" th:text="${error}"></p>
+        </form>
+<th:block th:include="partials/footer.html"></th:block>

@@ -1,0 +1,9 @@
+<header>
+    <div>
+        <h1>The <span class="textGreen">Hi</span>-<span class="textRed">Lo</span> Game</h1>
+    </div>
+    <nav>
+        <a th:class="${#strings.contains(title, 'Home')} ? 'active' : null" href="/">Home</a>
+        <a th:class="${#strings.contains(title, 'Highscores')} ? 'active' : null" href="/highscores">Highscores</a>
+    </nav>
+</header>

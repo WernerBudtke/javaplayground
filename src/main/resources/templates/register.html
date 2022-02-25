@@ -1,0 +1,19 @@
+<th:block th:include="partials/head.html"></th:block>
+<body id="bodyRegister">
+    <th:block th:include="partials/header.html"></th:block>
+    <main>
+        <form action="/register" method="POST">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" minlength="2" maxlength="16" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" minlength="4" required>
+            </div>
+            <button type="submit">REGISTER</button>
+            <a href="/login">Already have an account? Log In!</a>
+            <p th:if="${error}" th:text="${error}"></p>
+
+        </form>
+<th:block th:include="partials/footer.html"></th:block>
